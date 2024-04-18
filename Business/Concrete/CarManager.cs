@@ -18,9 +18,32 @@ namespace Business.Concrete
             _CarDal = carDal;
         }
 
+        public void Add(Car car)
+        {
+            if (car.Description.Length < 2)
+            {
+                Console.WriteLine("Araba ismi minimum 2 karakter olmalıdır.");
+            }
+
+            if (car.DailyPrice <= 0)
+            {
+                Console.WriteLine("Araba günlük fiyatı 0'dan büyük olmalıdır.");
+            }
+        }
+
         public List<Car> GetAll()
         {
             return _CarDal.GetAll();
+        }
+
+        public Car GetCarsByBrandId(int brandId)
+        {
+            return _CarDal.Get(c=>c.BrandId ==  brandId);
+        }
+
+        public Car GetCarsByColorId(int colorId)
+        {
+            return _CarDal.Get(c => c.ColorId == colorId);
         }
     }
 }
