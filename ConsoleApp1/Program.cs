@@ -14,10 +14,10 @@ namespace MyApp
 
             BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            foreach (var brand in brandManager.GetAll())
-            {
-                Console.WriteLine(brand.Name);
-            }
+            //foreach (var brand in brandManager.GetAll())
+            //{
+            //    Console.WriteLine(brand.Name);
+            //}
 
 
             foreach (var car in carManager.GetCarDetails())
