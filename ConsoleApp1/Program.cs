@@ -12,23 +12,18 @@ namespace MyApp
         {
             CarManager carManager = new CarManager(new EfCarDal());
 
-            Car newCar = new Car
-            {
-                BrandId = 1, // Örnek bir marka ID'si
-                ColorId = 1, // Örnek bir renk ID'si
-                ModelYear = DateTime.Now.AddYears(-3), // Örnek bir model yılı
-                DailyPrice = 150, // Günlük fiyat
-                Description = "d" // Açıklama
-            };
+            BrandManager brandManager = new BrandManager(new EfBrandDal());
 
-            // Yeni arabayı eklemek için AddCar metodu çağrılır
-            carManager.Add(newCar);
+            //foreach(var brand in brandManager.GetAll())
+            //{
+            //    Console.WriteLine(brand.Name);
+            //}
 
-            foreach (var car in carManager.GetAll())
+
+            foreach(var car in carManager.GetCarDetails())
             {
-                Console.WriteLine(car.CarId+ " " + car.BrandId + " " + car.ColorId + " " + car.ModelYear.ToShortDateString() + " "+ car.DailyPrice + " " + car.Description);
+                Console.WriteLine(car.Description  + " " + car.BrandName + " " + car.ColorName);
             }
-
         }
     }
 }

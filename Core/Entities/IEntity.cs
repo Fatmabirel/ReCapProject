@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Entity.Abstract
+namespace Core.Entities
 {
     // Çıplak class kalmamalı
     public interface IEntity
