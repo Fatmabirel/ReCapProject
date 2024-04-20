@@ -15,5 +15,17 @@ namespace Business.Constants
         public static string CarUpdated = "Araba başarıyla güncellendi";
         public static string CarListed = "Arabalar listelendi";
         public static string MaintanenceTime = "Sistem bakımda. Lütfen daha sonra tekrar deneyin";
+
+        public static string BrandNameIsvalid = "Marka ismi en az 2 karakter olmalıdır";
+        public static string BrandAdded = "Marka başarıyla eklendi";
+        public static string BrandDeleted = "Marka başarıyla silindi";
+        public static string BrandUpdated = "Marka başarıyla güncellendi";
+        public static string BrandListed = "Markalar listelendi";
+
+        public static string ColorNameIsvalid = "Renk ismi en az 2 karakter olmalıdır";
+        public static string ColorAdded = "Renk başarıyla eklendi";
+        public static string ColorDeleted = "Renk başarıyla silindi";
+        public static string ColorUpdated = "Renk başarıyla güncellendi";
+        public static string ColorListed = "Renkler listelendi";
     }
 }
