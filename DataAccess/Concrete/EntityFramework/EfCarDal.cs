@@ -3,13 +3,8 @@ using DataAccess.Abstract;
 using Entity.Concrete;
 using Entity.DTOs;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DataAccess.Concrete.EntityFramework
 {
@@ -17,21 +12,21 @@ namespace DataAccess.Concrete.EntityFramework
     {
         public List<CarDetailDto> GetCarDetails()
         {
-            using(RecapContext context = new RecapContext())
+            using (RecapContext context = new RecapContext())
             {
-                var result = from c in context.Cars
-                             join cl in context.Colors
-                             on c.ColorId equals cl.ColorId
-                             join b in context.Brands
-                             on c.BrandId equals b.BrandId
+                var result = from car in context.Cars
+                             join color in context.Colors
+                             on car.ColorId equals color.ColorId
+                             join brand in context.Brands
+                             on car.BrandId equals brand.BrandId
                              select new CarDetailDto
                              {
-                                 CarId = c.CarId,
-                                 BrandName = b.Name,
-                                 ColorName = cl.Name,
-                                 Description = c.Description,
-                                 DailyPrice = c.DailyPrice,
-                                 ModelYear = c.ModelYear,
+                                 CarId = car.CarId,
+                                 BrandName = brand.Name,
+                                 ColorName = color.Name,
+                                 Description = car.Description,
+                                 DailyPrice = car.DailyPrice,
+                                 ModelYear = car.ModelYear,
                              };
                 return result.ToList();
             }
