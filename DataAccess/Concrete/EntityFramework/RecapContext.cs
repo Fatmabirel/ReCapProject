@@ -16,7 +16,6 @@ namespace DataAccess.Concrete.EntityFramework
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Customer>().HasNoKey();
         }
 
         public DbSet<Car> Cars { get; set; }
